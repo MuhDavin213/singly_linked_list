@@ -183,9 +183,9 @@ namespace singly_linked_list
                             }
                     }
                 }
-                catch()
+                catch(Exception)
                 {
-                    
+                    Console.WriteLine("\ncheck for the value enterd");
                 }
             }
         }
