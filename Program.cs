@@ -140,14 +140,47 @@ namespace singly_linked_list
                                     break;
                                 }
                                 Console.WriteLine("Enter the roll number of" + "" +
-                                    "the student whose record is to be deleted: ")
+                                    "the student whose record is to be deleted: ");
+                                int rollNo = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                if (obj.delnode(rollNo) == false)
+                                    Console.WriteLine("\nRecord not found.");
+                                else
+                                    Console.WriteLine("record with roll number" +
+                                        rollNo + "Deleted");
                             }
                             break;
                         case '3':
                             {
-
+                                obj.traverse();
                             }
                             break;
+                        case '4':
+                            {
+                                if(obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                node previous, current;
+                                previous = current = null;
+                                Console.Write("\nEnter the roll number of the" + "student whole record is to be reached: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.search(num, ref previous, ref current) == false)
+                                    Console.WriteLine("\nRecord not found");
+                                else
+                                    Console.WriteLine("\nRecord not found");
+                                Console.WriteLine("\nRoll number: " + current.rollnumber);
+                                Console.WriteLine("\nName: " + current.name);
+                            }
+                            break ;
+                        case '5':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid Option");
+                                break ;
+                            }
                     }
                 }
                 catch()
