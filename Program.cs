@@ -32,7 +32,7 @@ namespace singly_linked_list
             node newnode = new node();
             newnode.rollnumber = rollNo;
             newnode.name = nm;
-            if (START != null || rollNo == START.rollnumber)
+            if (START == null || rollNo == START.rollnumber)
             {
                 if((START != null) &&(rollNo == START.rollnumber))
                 {
@@ -49,9 +49,9 @@ namespace singly_linked_list
 
             while ((current != null)&&(rollNo >= current.rollnumber))
             {
-                if(rollNo == current.rollnumber)
+                if (rollNo == current.rollnumber)
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("\nDuplicate roll numbers not allowed\n");
                     return;
                 }
                 previous.next = current;
